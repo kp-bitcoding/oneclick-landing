@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+  scroll-behavior: smooth;
+}
+
+/* Default padding for large screens */
+section {
+  padding: 80px 0;
+}
+
+/* Adjust padding for tablets and smaller screens */
+@media screen and (max-width: 1024px) {
+  section {
+      padding: 60px 0;
+  }
+}
+
+/* Adjust padding for mobile devices */
+@media screen and (max-width: 768px) {
+  section {
+      padding: 40px 0;
+  }
+}
+
+/* Adjust padding for very small screens */
+@media screen and (max-width: 480px) {
+  section {
+      padding: 20px 0;
+  }
+}
+
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    scrollbar-width: none;
+  }
+
+
+  @keyframes border-slide {
+    0% {
+      width: 0;
+      border-color: transparent;
+    }
+    100% {
+      width: 100%;
+      border-color: #078DEE; /* Green color */
+    }
+  }
+
+
+  
+  .curved-border::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 4px;
+    width: 100%; /* Set width to 100% for full curve effect */
+    background-color: #078DEE;
+    border-radius: 46% 54% 53% 47% / 100% 100% 0% 0%; /* Creates the curved edges */
+    transition: width 1s ease-in-out; /* Smooth animation */
+    width: 0; /* Initially hidden */
+    animation: border-slide 2s forwards; /* Triggers the animation */
+}
+
+  
