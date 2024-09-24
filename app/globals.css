@@ -12,6 +12,7 @@ section {
   padding: 80px 0;
 }
 
+
 /* Adjust padding for tablets and smaller screens */
 @media screen and (max-width: 1024px) {
   section {
@@ -69,5 +70,6 @@ section {
     width: 0; /* Initially hidden */
     animation: border-slide 2s forwards; /* Triggers the animation */
 }
+
 
   

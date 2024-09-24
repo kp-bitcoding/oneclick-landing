@@ -24,12 +24,11 @@ export default function Hero() {
                     <div className='relative w-full h-full flex justify-center items-center'>
                         <div className='md:justify-self-end'>
                             <Image src='/assets/images/hero.png' alt='Basket' width={564} height={564} className='animate-moveInHexagon' />
-
                             <Image src='/assets/images/Ellipse-16.png' alt='Ellipse-16' width={10} height={10} className="absolute top-20 left-20 animate-moveInY" />
                             <Image src='/assets/images/noto_fire.gif' alt='noto_fire' width={30} height={30} className="absolute top-4 right-24 animate-moveInX" />
                             <Image src='/assets/images/Rectangle-7.png' alt='Rectangle-7' width={18} height={18} className="absolute left-0 top-52 animate-moveInX" />
                             <Image src='/assets/images/Rectangle-8.png' alt='Rectangle-8' width={15} height={15} className="absolute bottom-0 right-0 animate-moveInX" />
-                            <Image src='/assets/images/Vector-1.png' alt='vector-1' width={100} height={200} className="absolute top-28  right-8" />
+                            <Image src='/assets/images/Vector-1.gif' alt='vector-1' width={150} height={250} className="absolute bottom-[300px]  right-[30px] -rotate-45" />
                         </div>
                     </div>
                 </div>

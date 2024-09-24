@@ -1,8 +1,7 @@
-'use client'
+'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { useState } from 'react';
 
 const Capabilities = ({ onEnter, onExit }) => {
     const contentMap = {
@@ -41,6 +40,17 @@ const Capabilities = ({ onEnter, onExit }) => {
             description: 'Automate ticket creation and claims handling seamlessly.',
             imageSrc: '/assets/images/Automated-Ticket.png',
         },
+        // Add your two new "black" items here
+        'black-1': {
+            title: '',
+            description: '',
+            imageSrc: '/assets/images/white-bg.png',
+        },
+        'black-2': {
+            title: '',
+            description: '',
+            imageSrc: '/assets/images/white-bg.png',
+        }
     };
 
     const [activeContent, setActiveContent] = useState('dashboard');
@@ -52,6 +62,7 @@ const Capabilities = ({ onEnter, onExit }) => {
         const container = containerRef.current;
         if (!container) return;
 
+        // Find the total height of the scrollable content
         const scrollPosition = container.scrollTop;
         const sectionHeight = container.scrollHeight / Object.keys(contentMap).length;
         const currentIndex = Math.floor(scrollPosition / sectionHeight);
@@ -69,9 +80,9 @@ const Capabilities = ({ onEnter, onExit }) => {
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        onEnter(); // Notify parent that the section is in view
+                        onEnter();
                     } else {
-                        onExit(); // Notify parent that the section is out of view
+                        onExit();
                     }
                 });
             },
@@ -89,12 +100,16 @@ const Capabilities = ({ onEnter, onExit }) => {
     }, [onEnter, onExit]);
 
     return (
-        <div ref={sectionRef} className="container">
-            <div className="relative flex justify-end items-center z-40">
+        <div ref={sectionRef} className="container sticky top-0">
+            <div className="text-center mb-8 md:mb-16 max-w-[1000px] mx-auto">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">A Fantastic Range of <span className="text-sky">Capabilities</span> To Suit Your Needs.</h2>
+                <p className="mt-4 text-lg md:text-xl text-gray inline-block">Smart tools tailored to enhance the success of sellers, D2C brands, and retailers.</p>
+            </div>
+            <div className="md:relative flex md:flex-row flex-col justify-end items-center md:z-40">
                 {/* Scrollable Content */}
                 <div
                     ref={containerRef}
-                    className="h-[400px] w-full overflow-y-scroll snap-y snap-mandatory scrollbar-hide"
+                    className="md:h-[400px] h-[100px] w-full overflow-y-scroll snap-y snap-mandatory scrollbar-hide"
                     onScroll={handleScroll}
                 >
                     <div className="flex h-full">
@@ -109,13 +124,13 @@ const Capabilities = ({ onEnter, onExit }) => {
                                     <Image
                                         src={contentMap[key].imageSrc}
                                         alt={`${contentMap[key].title} Icon`}
-                                        className={`w-[112px] h-[112px] object-contain transition-transform duration-500 ${activeContent === key ? 'scale-105' : ''
+                                        className={`w-[70px] h-[70px] md:w-[112px] md:h-[112px] object-contain transition-transform duration-500 ${activeContent === key ? 'scale-105' : ''
                                             }`}
                                         width={112}
                                         height={112}
                                     />
                                     <p
-                                        className={`text-lg font-bold ml-4 ${activeContent === key ? 'text-sky-500' : 'text-gray-500'
+                                        className={`md:text-lg text-md font-bold ml-4 ${activeContent === key ? 'text-sky-500' : 'text-gray-500'
                                             }`}
                                     >
                                         {contentMap[key].title}
@@ -126,22 +141,22 @@ const Capabilities = ({ onEnter, onExit }) => {
                     </div>
                 </div>
                 {/* Main Content */}
-                <div className="max-w-4xl ml-12 flex items-center absolute top-0 bottom-0 -z-40">
+                <div className="md:max-w-4xl md:ml-12 flex items-center md:absolute md:top-0 md:bottom-0 md:-z-40">
                     {activeContent && (
-                        <div className="flex items-center justify-center">
+                        <div className="flex md:flex-row flex-col items-center justify-center">
                             <Image
-                                src={contentMap[activeContent].imageSrc || '/default-icon.png'}
-                                alt={contentMap[activeContent].title || 'Icon'}
-                                className="mr-4 animate-moveInHexagon"
+                                src={contentMap[activeContent]?.imageSrc || '/default-icon.png'}
+                                alt={contentMap[activeContent]?.title || 'Icon'}
+                                className="md:mr-4 md:h-[370px] md:w-[370px] h-[200px] w-[200px] animate-moveInHexagon"
                                 style={{ animationDuration: '6s' }}
                                 width={370}
                                 height={370}
                             />
                             <div>
-                                <p className="font-semibold text-4xl mb-3">
+                                <p className="font-semibold text-2xl md:text-4xl text-center md:text-left mb-3">
                                     {contentMap[activeContent].title || 'Title'}
                                 </p>
-                                <p className="text-xl font-normal text-gray-600">
+                                <p className="md:text-xl text-md text-center md:text-left font-normal text-gray-600">
                                     {contentMap[activeContent].description || 'Description'}
                                 </p>
                             </div>

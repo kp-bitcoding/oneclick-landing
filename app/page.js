@@ -8,22 +8,13 @@ import Hero from "@/components/Hero";
 import { Testimonial } from "@/components/Testimonial";
 
 export default function Home() {
-  const [isCapabilitiesActive, setIsCapabilitiesActive] = useState(true); // Initially true to lock scroll
-
+  const [isCapabilitiesActive, setIsCapabilitiesActive] = useState(true);
   const handleCapabilitiesEnter = () => {
     setIsCapabilitiesActive(true);
   };
 
   const handleCapabilitiesExit = () => {
     setIsCapabilitiesActive(false);
-  };
-
-  const handleCapabilitiesComplete = () => {
-    // Scroll to the next section after the Capabilities section is fully viewed
-    const nextSection = document.querySelector("#next-section");
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: "smooth" });
-    }
   };
 
   return (
@@ -35,20 +26,20 @@ export default function Home() {
           <Capabilities
             onEnter={handleCapabilitiesEnter}
             onExit={handleCapabilitiesExit}
-            onComplete={handleCapabilitiesComplete}
           />
         </section>
 
-        {/* Business section with id to scroll to */}
-        <section id="next-section">
-          <Business />
-        </section>
+        {/* Business section */}
+        <Business />
 
         <Testimonial />
 
         <Faq />
 
-        <Connect />
+        {/* Make Connect section scrollable */}
+        <section>
+          <Connect />
+        </section>
       </div>
     </>
   );
