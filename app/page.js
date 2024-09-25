@@ -17,16 +17,14 @@ export default function Home() {
     setIsCapabilitiesActive(false);
   };
 
+
   return (
     <>
       <div>
         <Hero />
 
-        <section className="bg-white">
-          <Capabilities
-            onEnter={handleCapabilitiesEnter}
-            onExit={handleCapabilitiesExit}
-          />
+        <section className="bg-white h-[400vh]">
+          <Capabilities />
         </section>
 
         {/* Business section */}
@@ -37,9 +35,7 @@ export default function Home() {
         <Faq />
 
         {/* Make Connect section scrollable */}
-        <section>
-          <Connect />
-        </section>
+        <Connect />
       </div>
     </>
   );

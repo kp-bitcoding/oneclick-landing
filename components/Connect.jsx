@@ -80,7 +80,9 @@ export function Connect() {
                 })
 
                 if (response.status === 200 || response.status === 201) {
-                    toast.success("Message sent successfully!");
+                    toast.success("Message sent successfully!", {
+                        position: "bottom-right",
+                    });
                     setFormData({
                         full_name: '',
                         email: '',
@@ -212,14 +214,14 @@ export function Connect() {
                                 </div>
 
                                 {/* reCAPTCHA */}
-                                <div className="mb-[24px] re-captcha overflow-x-hidden">
+                                {/* <div className="mb-[24px] re-captcha overflow-x-hidden">
                                     <ReCAPTCHA
                                         sitekey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}
                                         onChange={handleCaptchaChange}
                                         className='overflow-x-hidden'
                                     />
                                     {errors.captcha && <p className="text-red-500 text-sm">{errors.captcha}</p>}
-                                </div>
+                                </div> */}
 
                                 <button
                                     type="submit"

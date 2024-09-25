@@ -13,8 +13,8 @@ export default function Header() {
                         <Link href="/" className="flex-shrink-0">
                             <Image
                                 src='/assets/images/one-click-logo.png'
-                                width={150}
-                                height={50}
+                                width={159}
+                                height={51}
                                 alt="OneClick Logo"
                             />
                         </Link>
@@ -27,13 +27,17 @@ export default function Header() {
                             <a href="#contact" className="text-gray hover:text-black font-medium"
                                 onClick={(e) => {
                                     e.preventDefault();
-                                    document.getElementById('contact').scrollIntoView({
-                                        behavior: 'smooth',
-                                        block: 'start'
-                                    });
+                                    const connect = document.getElementById('contact');
+                                    if (connect) {
+                                        connect.scrollIntoView({
+                                            behavior: 'smooth',
+                                            block: 'start'
+                                        });
+                                    } else {
+                                        window.location.href = "/";
+                                    }
                                 }}
                             >Contact Us</a>
-                            {/* <Link href="/" className="text-gray hover:text-black font-medium">Contact Us</Link> */}
                         </nav>
                         <Link href="/" className="p-[16px] text-sm text-white bg-black rounded-lg font-bold">
                             Sign in / Sign Up
@@ -56,10 +60,24 @@ export default function Header() {
             {/* Mobile menu (controlled via state) */}
             <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden`}>
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <Link href="/" className="block text-gray hover:bg-offwhite px-3 py-2 rounded-md">Home</Link>
-                    <Link href="/aboutus" className="block text-gray hover:bg-offwhite px-3 py-2 rounded-md">About Us</Link>
-                    <Link href="/" className="block text-gray hover:bg-offwhite px-3 py-2 rounded-md">Contact Us</Link>
-                    <Link href="/" className="block text-gray hover:bg-offwhite px-3 py-2 rounded-md">Sign in / Sign Up</Link>
+                    <Link href="/" className="block text-gray hover:bg-offwhite px-3 py-2 rounded-md" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                    <Link href="/aboutus" className="block text-gray hover:bg-offwhite px-3 py-2 rounded-md" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+                    <a href="#contact" className="block text-gray hover:bg-offwhite px-3 py-2 rounded-md"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            const connect = document.getElementById('contact');
+                            if (connect) {
+                                connect.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            } else {
+                                window.location.href = "/";
+                            }
+                            setMobileMenuOpen(false);
+                        }}
+                    >Contact Us</a>
+                    <Link href="/" className="block text-gray hover:bg-offwhite px-3 py-2 rounded-md" onClick={() => setMobileMenuOpen(false)}>Sign in / Sign Up</Link>
                 </div>
             </div>
         </header>
