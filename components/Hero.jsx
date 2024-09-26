@@ -25,10 +25,10 @@ export default function Hero() {
                         <div className='md:justify-self-end'>
                             <Image src='/assets/images/hero.png' alt='Basket' width={564} height={564} className='animate-moveInHexagon' />
                             <Image src='/assets/images/Ellipse-16.png' alt='Ellipse-16' width={10} height={10} className="absolute top-10 left-10 lg:top-20 lg:left-20 animate-moveInY" />
-                            <Image src='/assets/images/noto_fire.gif' alt='noto_fire' width={30} height={30} className="absolute top-2 right-[30px] lg:top-4 lg:right-[150px] animate-moveInX" />
+                            <Image src='/assets/images/noto_fire.gif' alt='noto_fire' width={30} height={30} className="absolute top-0 right-[30px] md:right-[50px] animate-moveInX" />
                             <Image src='/assets/images/Rectangle-7.png' alt='Rectangle-7' width={18} height={18} className="absolute left-0 top-52 animate-moveInX" />
                             <Image src='/assets/images/Rectangle-8.png' alt='Rectangle-8' width={15} height={15} className="absolute bottom-0 right-0 animate-moveInX" />
-                            <Image src='/assets/images/Vector-1.gif' alt='vector-1' width={150} height={250} className="absolute w-[100px] h-[60px] lg:w-[150px] lg:h-[84px]  bottom-[170px] right-[-20px] lg:bottom-[300px]  lg:right-[50px] -rotate-45" />
+                            <Image src='/assets/images/Vector-1.gif' alt='vector-1' width={150} height={250} className="absolute w-[100px] h-[60px] lg:w-[150px] lg:h-[84px]  bottom-[150px] sm:bottom-[180px] right-[-20px]  md:bottom-[170px] lg:bottom-[220px] xl:bottom-[280px] xl:right-[0px]  md:right-[0px] lg:right-0 -rotate-45" />
                         </div>
                     </div>
                 </div>

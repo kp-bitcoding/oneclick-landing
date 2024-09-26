@@ -107,7 +107,7 @@ const Capabilities = () => {
                         className="md:h-[400px] h-[100px] md:w-[400px] w-full overflow-y-scroll snap-y snap-mandatory scrollbar-hide"
                         onScroll={handleScroll}
                     >
-                        <div className="h-full w-full flex flex-col space-y-8 p-4 sticky top-0">
+                        <div className="h-full w-full flex flex-col space-y-8 p-4 sticky top-0 mb-5 md:mb-0">
                             <Swiper
                                 direction="vertical"
                                 slidesPerView={3}

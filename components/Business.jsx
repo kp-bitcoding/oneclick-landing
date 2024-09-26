@@ -83,7 +83,7 @@ export function Business() {
                                 <h3 className="text-2xl  md:text-4xl font-semibold text-black mb-4 text-center md:text-left">Elevate Your<br /> Business Reach</h3>
                                 <p className="text-gray text-md md:text-xl text-center md:text-left">
                                     <span className='relative' ref={(el) => curvedElementsRef.current[5] = el}>Grow your business confidently</span>
-                                    with OneClick OMS's effective tools and <span className='relative' ref={(el) => curvedElementsRef.current[6] = el}>supportive resources.</span>
+                                    with OneClick OMS&#39;s effective tools and <span className='relative' ref={(el) => curvedElementsRef.current[6] = el}>supportive resources.</span>
                                 </p>
                             </div>
                         </div>
