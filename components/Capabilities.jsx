@@ -88,7 +88,7 @@ const Capabilities = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [activeContent]);
+    }, [activeContent, handleScroll]);
 
     return (
         <div className="sticky top-40" ref={topSectionRef}>

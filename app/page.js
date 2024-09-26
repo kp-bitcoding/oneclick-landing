@@ -8,14 +8,6 @@ import Hero from "@/components/Hero";
 import { Testimonial } from "@/components/Testimonial";
 
 export default function Home() {
-  const [isCapabilitiesActive, setIsCapabilitiesActive] = useState(true);
-  const handleCapabilitiesEnter = () => {
-    setIsCapabilitiesActive(true);
-  };
-
-  const handleCapabilitiesExit = () => {
-    setIsCapabilitiesActive(false);
-  };
 
 
   return (
